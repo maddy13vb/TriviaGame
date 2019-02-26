@@ -1,0 +1,24 @@
+body {
+    background-image: url("../images/heic0901d.jpg");
+}
+header {
+    color:rgb(230, 188, 5);
+    font-size: 100px;
+    text-align: center;
+}
+p {
+    color:white;
+    font-size: 20px;
+    text-align: center;
+}
+button { 
+    background-color:rgb(230, 188, 5);
+    padding: 30px 75px 30px 75px;
+    color: white;
+    font-size: 25px;
+    margin: 100px 560px 25px;
+
+}
+img {
+    padding-left: 120px;
+}
