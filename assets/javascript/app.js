@@ -28,9 +28,7 @@ $(document).ready(function () {
     ];
     var correctAnswer = 0;
     var wrongAnswer = 0;
-    var question = 0;
     var questionsGenerated = 0;
-    var trivia;
     var time = 60;
     var intervalId;
 
@@ -59,10 +57,10 @@ $(document).ready(function () {
         };
         function stop() {
             clearInterval(intervalId);
-        });
         };
+    };
 
-function generate() {
-
-}
-    });
+    function generate() {
+        $("#triviaGame").html(mainQuestion.question);
+    }
+});
