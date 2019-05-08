@@ -3,42 +3,69 @@ $(document).ready(function () {
         {
             question: "What is the hottest known planet?",
             options: ["Jupiter", "KELT-9b", "Earth", "KELT-9c"],
-            correct: "KELT-9b",
+            correct: 1,
         },
         {
             question: "Who was the first person to make a drawing of the moon?",
             options: ["Galileo Galilei", "Thomas Harriot", "Michael Scott", "Neil Armstrong"],
-            correct: "Thomas Harriot",
+            correct: 1,
         },
         {
             question: "Scientist at Yale University believe that the planet 55 Cancri e is made out of ____.",
             options: ["Diamonds", "Rubies", "Sapphire", "The tears of college students"],
-            correct: "Diamonds",
+            correct: 0,
         },
         {
-            quesion: "What shape is the raging storm on Saturn in?",
+            question: "What shape is the raging storm on Saturn in?",
             options: ["Circle", "Heart", "Octogon", "Hexagon"],
-            correct: "Hexagon",
+            correct: 3,
         },
         {
             question: "Who wrote the code to send the Apollo to the moon?",
             options: ["John Densmore", "Maragret Thatcher", "John Lennon", "Margaret Hamilton"],
-            correct: "Margaret Hamilton",
+            correct: 3,
         }
     ];
-    var correctAnswer = 0;
-    var wrongAnswer = 0;
+    var userSelection = 0;
+    var correctAnswer;
+    var wrongAnswer;
     var questionsGenerated = 0;
     var time = 60;
+    var currentQuestion = 0;
     var intervalId;
+    var number = 0;
 
     $("#start").click(function () {
         generate();
+
+
     });
+    function generate() {
+        $("#triviaGame").html("<h1>" + mainQuestions[currentQuestion].question + "</h1>");
+        mainQuestions[currentQuestion].options.forEach(function (selection, index) {
+            $('<div>')
+                .text(selection)
+                .attr('data-index', index)
+                .addClass("selection")
+                .appendTo($("#choices"));
+        });
+        timeKeeper();
+        $(".selection").on("click", function () {
+            userSelection = $(this).data("index");
+            console.log(userSelection);
+        });
+
+        correctAnswer = mainQuestions[currentQuestion].correct;
+        console.log(correctAnswer);
+    }
 
     function timeKeeper() {
-        clearInterval(intervalId);
-        intervalId = setInterval(decrement, 600);
+        number = 60;
+        $("#timeAppear").html("<h1>" + number + "</h1>");
+        time = setInterval(decrement, 1000);
+
+        // clearInterval(intervalId);
+        // intervalId = setInterval(decrement, 60000);
     };
 
     function decrement() {
@@ -46,13 +73,12 @@ $(document).ready(function () {
         $("#timeAppear").html("<h1>" + number + "</h1>");
 
         if (number === 30) {
-            alert("30 seconds left!");
-            console.log("30 seconds left!");
+            $(".alert").html('30 seconds left!');
         };
 
         if (number === 0) {
             stop();
-            alert("Out of time! Let's see if you reached the moon!");
+
 
         };
         function stop() {
@@ -60,7 +86,4 @@ $(document).ready(function () {
         };
     };
 
-    function generate() {
-        $("#triviaGame").html(mainQuestion.question);
-    }
 });

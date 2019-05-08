@@ -22,3 +22,15 @@ button {
 img {
     padding-left: 120px;
 }
+.selection {
+    color: white;
+    background-color:rgb(8, 11, 218);
+}
+#triviaGame {
+    color: white;
+    background-color: blue;
+}
+#clock {
+    color:yellow;
+    background-color: orange;
+}

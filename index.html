@@ -14,19 +14,26 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <header> Trivia Game!</header>
-    <p>Press "Start" to take a trip through the galaxy!</p>
-    <p> You will have 30 seconds to answer 5 trivia questions.</p>
-    <p> Once the timer runs out, the answers will be revealed!</p>
+    <div class="container" id="instructions">
+        <p>Press "Start" to take a trip through the galaxy!</p>
+        <p> You will have 30 seconds to answer 5 trivia questions.</p>
+        <p> Once the timer runs out, the answers will be revealed!</p>
+    </div>
+    <div id=clock>
+        <div id="timeAppear"></div>
+        <p class="alert"></p>
+    </div>
+    <div class="container" id="images">
+        <img src="assets/images/Planet-Earth-Transparent-Background-PNG.png" height="150px" alt="earth">
+        <img src="assets/images/mars.png" height="150px" alt="mars">
+        <img src="assets/images/super-moon.png" height="150px" alt="moon">
+        <img src="assets/images/neptune.png" height="175px" alt="neptune">
+    </div>
 
-    <img src="assets/images/Planet-Earth-Transparent-Background-PNG.png" height="150px" alt="earth">
-    <img src="assets/images/mars.png" height="150px" alt="mars">
-    <img src="assets/images/super-moon.png" height="150px" alt="moon">
-    <img src="assets/images/neptune.png" height="175px" alt="neptune">
-    <button id="start">Start</button>
-    <div id="trviaGame"></div>
-    <div id="timeAppear"></div>
+    <div id="triviaGame"></div>
+    <div id="choices"></div>
     <div id="results"></div>
-
+    <button id="start">Start</button>
     <script src="assets/javascript/app.js">
     </script>
 </body>
