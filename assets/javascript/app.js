@@ -63,6 +63,7 @@ $(document).ready(function () {
         number = 60;
         $("#timeAppear").html("<h1>" + number + "</h1>");
         time = setInterval(decrement, 1000);
+        // $("#mainQuestions").empty();
 
         // clearInterval(intervalId);
         // intervalId = setInterval(decrement, 60000);
@@ -82,8 +83,11 @@ $(document).ready(function () {
 
         };
         function stop() {
-            clearInterval(intervalId);
+            clearInterval(time);
         };
     };
 
 });
+
+
+//still need to generate the other questions on the screen. The answer choices display which object # in the array they are, but they do not display which is correct.
